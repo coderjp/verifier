@@ -1,6 +1,7 @@
 # Verifier (Laravel 5 Package)
 
-Verifier is a package sending out verification emails, requiring them to validate their emaill address.
+Verifier is a package for Laravel 5 that sends out verification emails to users in order for them to prove their
+email is valid. Users will click a link in the email to validate their address.
 
 ## Installation
 Require this package with composer using the following command:
@@ -23,6 +24,8 @@ command to generate the migrations:
     
 ## Usage
 
+### Model
+
 Add the `VerifierUserTrait` to the model you wish to verify against. This will usually be the `User` model.
 
 ```php
@@ -37,6 +40,27 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     ...
 }
 ```
+
+### Template
+
+You will need to make a mail template for the welcome email to use. By default the config uses `emails.welcome`.
+
+The variable `$user` will be passed to your template. This will be an array of the relevant user.
+
+```php
+
+Hi {{$user['name']}},
+
+Welcome to our site. Please click the following link to activate your account:
+
+http://www.example.com/?code={{$user['verification_code']}}
+
+Regards, CoderJP
+
+```
+
+
+### Verifying
 
 Where you create a user, you can now call  the `sendVerification()` method on the model. This will trigger
 an email to be sent to the user.
