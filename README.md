@@ -17,7 +17,7 @@ Generate the config file for changing various settings. This can be found in `co
     php artisan vendor:publish --provider=coderjp/verifier
     
 Make sure the `tables` config option is correct. By default the table used is `users`. Then run the following
-command to generate the migrations
+command to generate the migrations:
 
     php artisan verifier:migration
     
@@ -38,8 +38,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 }
 ```
 
-Where you create a user, you can now call  the `sendVerification()` method them. This will trigger an email to be
-sent to the user.
+Where you create a user, you can now call  the `sendVerification()` method on the model. This will trigger
+an email to be sent to the user.
 
 ```php
 ...
@@ -56,7 +56,7 @@ public function store(CreateUserRequest $request)
 
 ```
 
-To verify a token you can use the `verify()` method like so
+To verify a token you can use the `verify()` method like so:
 
 ```php
 <?php
@@ -74,7 +74,7 @@ class UserController extends Controller {
                 return view('user.validated');
             } else {
                 // $user = null;
-                return view('user.invalid')
+                return view('user.invalid');
             }
     }
 
@@ -93,8 +93,8 @@ in your model
 
 ### To: Name
 
-This is the name of the recipient. Byt default it uses the `name` attribute of the model, however you can override
-it by declaring the following.
+This is the name of the recipient. By default it uses the `name` attribute of the model, however you can override
+it by declaring the following:
 
 ```php
 ...
@@ -108,7 +108,7 @@ public function getVerificationEmailName() {
 
 ### Email Subject
 
-By default, the config option `subject` is used, however you can define the following method in the model.
+By default, the config option `subject` is used, however you can define the following method in the model:
 
 ```php
 ...
