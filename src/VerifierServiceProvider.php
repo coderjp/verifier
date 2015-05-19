@@ -9,10 +9,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class VerifierServiceProvider extends ServiceProvider {
-
-    protected $defer = false;
-
+class VerifierServiceProvider extends ServiceProvider
+{
 
     /**
      * Bootstrap the application services.

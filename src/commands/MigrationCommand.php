@@ -1,10 +1,11 @@
 <?php namespace Coderjp\Verifier;
 /**
- * This file is part of Verifier,
+ * This file is part of Verifier.
  *
  * @license MIT
  * @package Coderjp\Verifier
  */
+
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 
@@ -16,12 +17,14 @@ class MigrationCommand extends Command
      * @var string
      */
     protected $name = 'verifier:migration';
+
     /**
      * The console command description.
      *
      * @var string
      */
     protected $description = 'Creates a migration for Verifier';
+
     /**
      * Execute the console command.
      *
@@ -64,10 +67,11 @@ class MigrationCommand extends Command
             $this->line('');
         }
     }
+
     /**
      * Create the migration.
      *
-     * @param string $name
+     * @param array $tables
      *
      * @return bool
      */
