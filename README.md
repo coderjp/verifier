@@ -4,11 +4,11 @@ Verifier is a package for Laravel 5 that sends out verification emails to users 
 email is valid. Users will click a link in the email to validate their address.
 
 ## Installation
-Add the following
+Require this package with composer using the following command:
 
-    "coderjp/verifier": "dev-master"
+    composer require coderjp/verifier
 
-to your `composer.json`. Then run `composer install` or `composer update`.
+Then run `composer install` or `composer update`.
 
 After updating composer, add the service provider to the `providers` array in `config/app.php`
 
