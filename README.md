@@ -16,7 +16,7 @@ After updating composer, add the service provider to the `providers` array in `c
     
 Generate the config file for changing various settings. This can be found in `config/verifier.php`.
     
-    php artisan vendor:publish --provider=coderjp/verifier
+    php artisan vendor:publish --provider=Coderjp\\Verifier\\VerifierServiceProvider
     
 Make sure the `tables` config option is correct. By default the table used is `users`. Then run the following
 command to generate the migrations:
