@@ -63,6 +63,11 @@ trait VerifierUserTrait
      */
     public static function verify($code)
     {
+        if (!$code) {
+            return null;
+        }
+
+
         if ($user = self::lookupVerificationCode($code)) {
             $user->setVerificationCode();
         }
