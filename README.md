@@ -50,11 +50,11 @@ The variable `$user` will be passed to your template. This will be an array of t
 
 ```php
 
-Hi {{$user['name']}},
+Hi {{ $user['name'] }},
 
 Welcome to our site. Please click the following link to activate your account:
 
-http://www.example.com/?code={{$user['verification_code']}}
+{{ url('verify', $user['verification_code']) }}
 
 Regards, CoderJP
 
@@ -90,9 +90,9 @@ class UserController extends Controller {
 
     ...
     
-    public function validate(Request $request)
+    public function validate(Request $request, $code)
     {
-            $user = User::verify($request->get('code');
+            $user = User::verify($code);
             
             if ($user) {
                 // $user = User model
