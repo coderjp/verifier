@@ -24,7 +24,10 @@
   "autoload": {
     "classmap": [
       "src/commands"
-    ]
+    ],
+    "psr-4": {
+        "Coderjp\\Verifier\\": "src"
+    }
   }
 }
 
