@@ -24,7 +24,7 @@ class VerifierAddColumns extends Migration
     public function down()
     {
     @foreach ($tables as $table)
-        Schema::table({{$table}}, function(Blueprint $table)
+        Schema::table('{{$table}}', function(Blueprint $table)
         {
             $table->dropColumn('{{$codeColumn}}');
             $table->dropColumn('{{$flagColumn}}');
