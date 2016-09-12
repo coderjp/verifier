@@ -33,7 +33,7 @@ class VerifierServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('command.verifier.migration', function ($app) {
+        $this->app->singleton('command.verifier.migration', function ($app) {
             return new MigrationCommand();
         });
     }
